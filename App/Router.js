@@ -5,7 +5,7 @@ import HomePageLayout from "../layouts/HomePageLayout";
 // pages
 import Homepage from "../pages/Homepage";
 import Memo from "../pages/Memo";
-import User from "../component/users";
+import User from "../pages/Users";
 
 const App = props => {
   return (
