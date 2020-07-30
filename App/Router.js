@@ -7,6 +7,7 @@ import ErrorPageLayout from "../layouts/ErrorPageLayout";
 // pages
 import Homepage from "../pages/Homepage";
 import Memo from "../pages/Memo";
+import Others from "../pages/Others";
 import User from "../pages/Users";
 import NotFound from "../pages/NotFound";
 
@@ -39,6 +40,15 @@ const App = props => {
           render={() => (
             <HomePageLayout>
               <Memo />
+            </HomePageLayout>
+          )}
+        />
+        <Route
+          exact
+          path="/others"
+          render={() => (
+            <HomePageLayout>
+              <Others />
             </HomePageLayout>
           )}
         />
