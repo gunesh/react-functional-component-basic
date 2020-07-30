@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import ThemeContext from "../ThemeContext";
+import ThemeContext from "../utility/ThemeContext";
 import Router from "./Router";
 
 const App = props => {

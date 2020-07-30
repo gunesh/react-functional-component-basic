@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import AppNav from "./common/Nav";
-import ThemeContext from "../ThemeContext";
+import ThemeContext from "../utility/ThemeContext";
 
 const HomepageLayout = props => {
   const { style, toggleStyle} = useContext(
