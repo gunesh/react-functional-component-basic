@@ -83,7 +83,7 @@ h1, p {
 }
 
 .dark{
-  background-color: green;
+  background-color:$app-dark-bg;
   button{
     padding:1px 3px 2px 1px !important;
     margin-bottom: 5px;
@@ -92,7 +92,7 @@ h1, p {
   .memo-page{
     button {
       color: #fff;
-      background-color: red;
+      background-color: rgb(243, 12, 12);
       text-align: center;
       vertical-align: middle;
       border: 1px solid transparent;
@@ -101,7 +101,7 @@ h1, p {
   }
 }
 .light{
-   background-color:#adadad;
+   background-color:$app-light-bg;
    button{
     padding:1px 3px 2px 1px !important;
     margin-bottom: 5px;
