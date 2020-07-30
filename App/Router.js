@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { HashRouter, Redirect,Switch, Route } from "react-router-dom";
 // layouts
 import HomePageLayout from "../layouts/HomePageLayout";
 // pages
@@ -9,26 +9,28 @@ import User from "../pages/Users";
 
 const App = props => {
   return (
-    <Switch>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <HomePageLayout>
-            <User />
-          </HomePageLayout>
-        )}
-      />
-      <Route
-        exact
-        path="memo"
-        render={() => (
-          <HomePageLayout>
-            <Memo />
-          </HomePageLayout>
-        )}
-      />
-    </Switch>
+    <HashRouter basename="/">
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <HomePageLayout>
+              <User />
+            </HomePageLayout>
+          )}
+        />
+        <Route
+          exact
+          path="memo"
+          render={() => (
+            <HomePageLayout>
+              <Memo />
+            </HomePageLayout>
+          )}
+        />
+      </Switch>
+    </HashRouter>
   );
 };
 
