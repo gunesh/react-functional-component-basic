@@ -83,7 +83,21 @@ h1, p {
 
 .dark{
   background-color: green;
-  
+  button{
+    padding:1px 3px 2px 1px !important;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+  .memo-page{
+    button {
+      color: #fff;
+      background-color: red;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+    }
+  }
 }
 .light{
    background-color: red;
@@ -95,7 +109,7 @@ h1, p {
   .memo-page{
     button {
       color: #fff;
-      background-color: #007bff;
+      background-color: green;
       text-align: center;
       vertical-align: middle;
       border: 1px solid transparent;
