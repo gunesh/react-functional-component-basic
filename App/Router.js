@@ -22,7 +22,7 @@ const App = props => {
         />
         <Route
           exact
-          path="memo"
+          path="/memo"
           render={() => (
             <HomePageLayout>
               <Memo />
