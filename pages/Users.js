@@ -302,7 +302,7 @@ const User = () => {
         </div>
       )}
 
-      <div>List of Users</div>
+      <h4>Users Management</h4>
       {pageView()}
     </>
   );
