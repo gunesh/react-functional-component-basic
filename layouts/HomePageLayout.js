@@ -10,7 +10,9 @@ const HomepageLayout = props => {
     <>
    
        <AppNav />
-        <button onClick={toggleStyle}>Current Theme : {style}</button>
+       <br />
+        <button className="btn btn-primary" onClick={toggleStyle}>Current Theme : {style}</button> <br />
+        <br />
         <main className={"container "+style }>{props.children}</main>
     
     </>
