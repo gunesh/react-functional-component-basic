@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import ThemeContext from "../utility/ThemeContext";
-import Router from "./Router";
+import { Provider } from 'react-redux';
 
+import ThemeContext from "../utility/ThemeContext";
+import store from "../redux/store/createStore";
+
+import Router from "./Router";
 const App = props => {
   const [style, setStyle] = useState("light");
   function toggleStyle() {
@@ -10,11 +13,13 @@ const App = props => {
   }
   return (
     <React.StrictMode>
-      <BrowserRouter>
-        <ThemeContext.Provider value={{ style, toggleStyle }}>
-          <Router />
-        </ThemeContext.Provider>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <ThemeContext.Provider value={{ style, toggleStyle }}>
+            <Router />
+          </ThemeContext.Provider>
+        </BrowserRouter>
+      </Provider>
     </React.StrictMode>
   );
 };
