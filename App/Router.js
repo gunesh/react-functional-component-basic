@@ -2,10 +2,14 @@ import React, { useEffect } from "react";
 import { HashRouter, Redirect,Switch, Route } from "react-router-dom";
 // layouts
 import HomePageLayout from "../layouts/HomePageLayout";
+import ErrorPageLayout from "../layouts/ErrorPageLayout";
+
 // pages
 import Homepage from "../pages/Homepage";
 import Memo from "../pages/Memo";
 import User from "../pages/Users";
+import NotFound from "../pages/NotFound";
+
 
 const App = props => {
   return (
@@ -22,11 +26,29 @@ const App = props => {
         />
         <Route
           exact
+          path="/home"
+          render={() => (
+            <HomePageLayout>
+              <User />
+            </HomePageLayout>
+          )}
+        />
+        <Route
+          exact
           path="/memo"
           render={() => (
             <HomePageLayout>
               <Memo />
             </HomePageLayout>
+          )}
+        />
+        <Route
+          exact
+          path="*"
+          render={() => (
+            <ErrorPageLayout>
+              <NotFound />
+            </ErrorPageLayout>
           )}
         />
       </Switch>

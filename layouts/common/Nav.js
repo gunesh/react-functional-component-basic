@@ -9,7 +9,7 @@ const AppNav = props => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#memo">Memo Example</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#home">User</Nav.Link>
           <NavDropdown title="Action" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action 1</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Action 1</NavDropdown.Item>
