@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import ThemeContext from "./ThemeContext";
+import ThemeContext from "../ThemeContext";
 import Router from "./Router";
 
-const Tap = props => {
+const App = props => {
   const [style, setStyle] = useState("light");
   function toggleStyle() {
     setStyle(style => (style === "light" ? "dark" : "light"));
@@ -19,4 +19,4 @@ const Tap = props => {
     </React.StrictMode>
   );
 };
-export default Tap;
+export default App;

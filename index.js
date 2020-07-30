@@ -1,12 +1,11 @@
 import React, { Component, createContext } from "react";
 import { render } from "react-dom";
-import Map from "./Map";
-import Tap from "./Tap";
+import App from "./App/App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
 render(
-  <Tap />,
+  <App />,
   document.getElementById("root")
 );
    
