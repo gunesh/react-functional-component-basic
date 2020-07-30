@@ -18,9 +18,9 @@ function Memo() {
     return <AnotherComp />;
   }, [cnt2, cnt3]);
   return (
-    <div className="App">
+    <div className="memo-page">
       <div>
-        Count 1: {cnt1} &nbsp;&nbsp; <button onClick={count1}>Count1</button>{" "}
+        Count 1: {cnt1}&nbsp;&nbsp; <button onClick={count1}>Count1</button>{" "}
         &nbsp;&nbsp;
       </div>
       <div>
