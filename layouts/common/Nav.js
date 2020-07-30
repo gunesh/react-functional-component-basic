@@ -11,7 +11,7 @@ const AppNav = props => {
           <Nav.Link href="#memo">Memo Example</Nav.Link>
           <Nav.Link href="#home">User</Nav.Link>
           <NavDropdown title="Action" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action 1</NavDropdown.Item>
+            <NavDropdown.Item href="#userredux">Redux User Example </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Action 1</NavDropdown.Item>
           </NavDropdown>
         </Nav>

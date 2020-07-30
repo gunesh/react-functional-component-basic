@@ -9,6 +9,7 @@ import Homepage from "../pages/Homepage";
 import Memo from "../pages/Memo";
 import Others from "../pages/Others";
 import User from "../pages/Users";
+import UsersRedux from "../pages/UsersRedux";
 import NotFound from "../pages/NotFound";
 
 
@@ -31,6 +32,15 @@ const App = props => {
           render={() => (
             <HomePageLayout>
               <User />
+            </HomePageLayout>
+          )}
+        />
+         <Route
+          exact
+          path="/userredux"
+          render={() => (
+            <HomePageLayout>
+              <UsersRedux />
             </HomePageLayout>
           )}
         />

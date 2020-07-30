@@ -1,5 +1,6 @@
 const initial_state = {
-  users: []
+  users: [],
+  message:''
 };
 const usersReducer = (state = initial_state, action) => {
   switch (action.type) {
