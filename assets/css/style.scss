@@ -89,6 +89,25 @@ h1, p {
     margin-bottom: 5px;
     text-transform: capitalize;
   }
+   table{
+    th{
+      font-size: 12px;
+       color:#fff;
+    }
+    td{
+      font-size: 12px;
+      color:#fff;
+    }
+    button{
+      font-size: 12px;
+    }
+  }
+  div{
+    color:#fff;
+  }
+  h4{
+    color:#fff;
+  }
   .memo-page{
     button {
       color: #fff;
@@ -110,13 +129,18 @@ h1, p {
   table{
     th{
       font-size: 12px;
+       color:#000;
     }
     td{
       font-size: 12px;
+      color:#000;
     }
     button{
       font-size: 12px;
     }
+  }
+  h4{
+    color:#000;
   }
   .memo-page{
     button {
