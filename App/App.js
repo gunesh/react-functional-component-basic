@@ -5,11 +5,9 @@ import Router from "./Router";
 
 const App = props => {
   const [style, setStyle] = useState("light");
-  console.log(ThemeContext)
   function toggleStyle() {
     setStyle(style => (style === "light" ? "dark" : "light"));
   }
-
   return (
     <React.StrictMode>
       <BrowserRouter>
