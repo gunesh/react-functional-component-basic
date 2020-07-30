@@ -31,8 +31,8 @@ function Memo() {
         Count 3: {cnt3}&nbsp;&nbsp; <button onClick={count3}>Count3</button>{" "}
         &nbsp;&nbsp;
       </div>
-      This is Normal Component : <AnotherComp />
-      This is memorize Component : {myMemoComponent}
+       This is Normal Component : <AnotherComp />
+       This is memorize Component : {myMemoComponent}
     </div>
   );
 }
