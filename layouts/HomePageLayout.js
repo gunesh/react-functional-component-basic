@@ -8,13 +8,13 @@ const HomepageLayout = props => {
   );
   return (
     <>
-   
+   <div className={style}>
        <AppNav />
        <br />
         <button className="btn btn-primary" onClick={toggleStyle}>Click here to see context example : {style}</button> <br />
         <br />
         <main className={"container "+style }>{props.children}</main>
-    
+    </div>
     </>
   );
 };
