@@ -10,9 +10,9 @@ import { of } from "rxjs";
 import {
   fetchUserSuccess,
   fetchUserFail
-} from "../actions/usersAction";
+} from "../actions/usersActions";
 import {
-  doDashboardListAPI
+  doGetUsersListAPI
 } from "./usersApi";
 
 const doUserListEpic = (action$, state$) =>
@@ -20,7 +20,7 @@ const doUserListEpic = (action$, state$) =>
     ofType('FETCH_USER_START'),
     withLatestFrom(state$),
     switchMap(([action, state]) =>
-      doDashboardListAPI().pipe(
+      doGetUsersListAPI().pipe(
         mergeMap(res => of(fetchUserSuccess(res.response.data))),
         catchError(error => of(fetchUserFail()))
       )
