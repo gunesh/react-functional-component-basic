@@ -9,15 +9,15 @@ import { of } from "rxjs";
 
 import {
   fetchUserSuccess,
-  fetchUserFail
+  fetchUserFail,
+  saveUserSuccess,
+  saveUserFail
 } from "../actions/usersActions";
-import {
-  doGetUsersListAPI
-} from "./usersApi";
+import { doGetUsersListAPI, doSaveUsersListAPI } from "./usersApi";
 
 const doUserListEpic = (action$, state$) =>
   action$.pipe(
-    ofType('FETCH_USER_START'),
+    ofType("FETCH_USER_START"),
     withLatestFrom(state$),
     switchMap(([action, state]) =>
       doGetUsersListAPI().pipe(
@@ -27,7 +27,17 @@ const doUserListEpic = (action$, state$) =>
     )
   );
 
+const doUserSaveEpic = (action$, state$) =>
+  action$.pipe(
+    ofType("SAVE_USER_START"),
+    withLatestFrom(state$),
+    switchMap(([action, state]) =>
+      doSaveUsersListAPI(state.userData.item).pipe(
+        mergeMap(res => of(saveUserSuccess("MESSAGE1"))),
+        catchError(error => of(saveUserFail("MESSAGE2")))
+      )
+    )
+  )
+  ;
 
-export default combineEpics(
-  doUserListEpic
-);
+export default combineEpics(doUserListEpic, doUserSaveEpic);

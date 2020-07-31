@@ -10,3 +10,15 @@ export function doGetUsersListAPI() {
         }
     })
 }
+
+
+export function doSaveUsersListAPI(item) {
+   return ajax({
+        url: 'https://reqres.in/api/users',
+        method: 'GET',
+        crossDomain: true,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+}

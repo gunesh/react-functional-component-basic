@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fetchUserStart } from "../redux/actions/usersActions";
+import { fetchUserStart,saveUserStart } from "../redux/actions/usersActions";
 
 const UsersRedux = props => {
   console.log(props);
@@ -46,6 +46,7 @@ const UsersRedux = props => {
     e.preventDefault();
     console.log("Add New Form submitted");
     console.log(details)
+    props.saveUserStart(details)
     setView("LIST");
     setLoader(false)
   };
@@ -278,5 +279,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchUserStart }
+  { fetchUserStart,saveUserStart }
 )(UsersRedux);
