@@ -71,7 +71,7 @@ const UsersRedux = (props) => {
             </tr>
           </thead>
           <tbody>
-            {data.map(item => (
+            {props.users.users.map(item => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.first_name}</td>
