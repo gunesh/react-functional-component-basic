@@ -8,6 +8,7 @@ import store from "../redux/store/createStore";
 import Router from "./Router";
 const App = props => {
   const [style, setStyle] = useState("light");
+  const [loader, setLoader] = useState(false);
   function toggleStyle() {
     setStyle(style => (style === "light" ? "dark" : "light"));
   }
@@ -15,7 +16,7 @@ const App = props => {
     <React.StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <ThemeContext.Provider value={{ style, toggleStyle }}>
+          <ThemeContext.Provider value={{ style, toggleStyle,loader,setLoader }}>
             <Router />
           </ThemeContext.Provider>
         </BrowserRouter>

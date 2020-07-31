@@ -9,7 +9,9 @@ const epicMiddleware = createEpicMiddleware();
 export const middlewares = [thunk, epicMiddleware, actionInterceptor];
 
 const initialState = {
-  
+  appData:{
+    loader:false
+  }
 };
 
 export const store = createStore(
