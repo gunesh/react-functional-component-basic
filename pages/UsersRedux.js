@@ -31,16 +31,25 @@ const UsersRedux = (props) => {
     console.log("Add New user");
     setView("ADD");
   };
-  const textOnChange = e => {
+  const changeDetail = e => {
+    console.log(e.target.name);
     console.log(e.target.value);
+    setDetails({
+      ...details,
+      [e.target.name]:e.target.value
+    })
   };
 
   const addNewUserFormSubmit = e => {
+    e.preventDefault()
     console.log('Add New Form submitted')
+    setView("LIST");
   };
 
   const updateFormSubmit = e => {
+    e.preventDefault()
     console.log("Update user form");
+    setView("LIST");
   };
   
   const ListView = () => {
@@ -119,7 +128,7 @@ const UsersRedux = (props) => {
       <>
         <div>Add information from here</div>
         <form onSubmit={addNewUserFormSubmit}>
-          <input type="text" name="name" placeholder="Enter Name" />
+          <input type="text" name="first_name" placeholder="Enter Name" onChange={changeDetail} />
           <Button type="submit" variant="primary" size="sm">
             Save
           </Button>
@@ -137,17 +146,38 @@ const UsersRedux = (props) => {
         <div>Update information from here</div>
         <form onSubmit={updateFormSubmit}>
           <div>----{details.id}------</div>
-          <div>----{details.first_name}------</div>
-          <div>----{details.last_name}------</div>
-          <div>----{details.email}------</div>
+          <div><input
+            type="text"
+            onChange={changeDetail}
+            value={details.first_name}
+            name="first_name"
+            placeholder="Enter Name"
+          /></div>
+          <div>
+          <input
+            type="text"
+            onChange={changeDetail}
+            value={details.last_name}
+            name="last_name"
+            placeholder="Enter Last Name"
+          /></div>
+          <div>
+          <input
+            type="text"
+            onChange={changeDetail}
+            value={details.email}
+            name="email"
+            placeholder="Enter Email"
+          />
+         </div>
           <div>
             <img src={details.avatar} />
           </div>
           <input
             type="text"
-            onChange={textOnChange}
-            value={name}
-            name="name"
+            onChange={changeDetail}
+            value={details.first_name}
+            name="first_name"
             placeholder="Enter Name"
           />
           <br />
