@@ -44,9 +44,7 @@ const UsersRedux = (props) => {
   const updateFormSubmit = e => {
     console.log("Update user form");
   };
-  const refreshData = () =>{
-    props.fetchUserStart();
-  }
+  
   const ListView = () => {
     return (
       <>
@@ -59,16 +57,7 @@ const UsersRedux = (props) => {
         >
           + Add New user
         </Button>
-        &nbsp;
-        <Button
-          variant="primary"
-          size="sm"
-          onClick={() => {
-            refreshData();
-          }}
-        >
-          Refresh
-        </Button>
+        
         &nbsp;
         <Table striped bordered hover size="sm">
           <thead>
