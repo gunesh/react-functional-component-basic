@@ -3,12 +3,12 @@ import { Table, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchUserStart } from "../redux/actions/usersActions";
 
-const UsersRedux = (props) => {
-  console.log(props)
+const UsersRedux = props => {
+  console.log(props);
   const [loader, setLoader] = useState(false);
   const [view, setView] = useState("LIST");
   const [details, setDetails] = useState({});
-  
+
   useEffect(() => {
     props.fetchUserStart();
   }, []);
@@ -36,22 +36,22 @@ const UsersRedux = (props) => {
     console.log(e.target.value);
     setDetails({
       ...details,
-      [e.target.name]:e.target.value
-    })
+      [e.target.name]: e.target.value
+    });
   };
 
   const addNewUserFormSubmit = e => {
-    e.preventDefault()
-    console.log('Add New Form submitted')
+    e.preventDefault();
+    console.log("Add New Form submitted");
     setView("LIST");
   };
 
   const updateFormSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     console.log("Update user form");
     setView("LIST");
   };
-  
+
   const ListView = () => {
     return (
       <>
@@ -64,7 +64,6 @@ const UsersRedux = (props) => {
         >
           + Add New user
         </Button>
-        
         &nbsp;
         <Table striped bordered hover size="sm">
           <thead>
@@ -128,7 +127,34 @@ const UsersRedux = (props) => {
       <>
         <div>Add information from here</div>
         <form onSubmit={addNewUserFormSubmit}>
-          <input type="text" name="first_name" placeholder="Enter Name" onChange={changeDetail} />
+         
+          <div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.first_name}
+              name="first_name"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.last_name}
+              name="last_name"
+              placeholder="Enter Last Name"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.email}
+              name="email"
+              placeholder="Enter Email"
+            />
+          </div>
           <Button type="submit" variant="primary" size="sm">
             Save
           </Button>
@@ -146,30 +172,33 @@ const UsersRedux = (props) => {
         <div>Update information from here</div>
         <form onSubmit={updateFormSubmit}>
           <div>----{details.id}------</div>
-          <div><input
-            type="text"
-            onChange={changeDetail}
-            value={details.first_name}
-            name="first_name"
-            placeholder="Enter Name"
-          /></div>
           <div>
-          <input
-            type="text"
-            onChange={changeDetail}
-            value={details.last_name}
-            name="last_name"
-            placeholder="Enter Last Name"
-          /></div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.first_name}
+              name="first_name"
+              placeholder="Enter Name"
+            />
+          </div>
           <div>
-          <input
-            type="text"
-            onChange={changeDetail}
-            value={details.email}
-            name="email"
-            placeholder="Enter Email"
-          />
-         </div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.last_name}
+              name="last_name"
+              placeholder="Enter Last Name"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              onChange={changeDetail}
+              value={details.email}
+              name="email"
+              placeholder="Enter Email"
+            />
+          </div>
           <div>
             <img src={details.avatar} />
           </div>
