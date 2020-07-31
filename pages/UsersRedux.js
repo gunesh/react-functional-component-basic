@@ -8,9 +8,7 @@ const UsersRedux = (props) => {
   const [loader, setLoader] = useState(false);
   const [view, setView] = useState("LIST");
   const [details, setDetails] = useState({});
-  const [data, setData] = useState(props.users.users);
- 
-
+  
   useEffect(() => {
     props.fetchUserStart();
   }, []);
@@ -22,11 +20,11 @@ const UsersRedux = (props) => {
     console.log("Delete user" + id);
   };
   const viewUser = item => {
+    setDetails(item);
     setView("VIEW");
   };
   const editUser = item => {
     setDetails(item);
-    setName(item.first_name);
     setView("EDIT");
   };
   const addNewUser = () => {
@@ -34,7 +32,7 @@ const UsersRedux = (props) => {
     setView("ADD");
   };
   const textOnChange = e => {
-    setName(e.target.value);
+    console.log(e.target.value);
   };
 
   const addNewUserFormSubmit = e => {
