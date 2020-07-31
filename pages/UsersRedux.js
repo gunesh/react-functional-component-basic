@@ -29,6 +29,7 @@ const UsersRedux = props => {
   };
   const addNewUser = () => {
     console.log("Add New user");
+    setDetails({});
     setView("ADD");
   };
   const changeDetail = e => {
@@ -41,9 +42,12 @@ const UsersRedux = props => {
   };
 
   const addNewUserFormSubmit = e => {
+    setLoader(true)
     e.preventDefault();
     console.log("Add New Form submitted");
+    console.log(details)
     setView("LIST");
+    setLoader(false)
   };
 
   const updateFormSubmit = e => {
