@@ -294,13 +294,7 @@ const User = () => {
   };
   return (
     <>
-      {loader && (
-        <div className="app-loader">
-          <br />
-          <br />
-          Loading.......
-        </div>
-      )}
+     
 
       <h4>Users Management</h4>
       {pageView()}

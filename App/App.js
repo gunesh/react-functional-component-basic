@@ -8,7 +8,7 @@ import store from "../redux/store/createStore";
 import Router from "./Router";
 const App = props => {
   const [style, setStyle] = useState("light");
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   function toggleStyle() {
     setStyle(style => (style === "light" ? "dark" : "light"));
   }
