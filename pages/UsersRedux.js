@@ -44,6 +44,9 @@ const UsersRedux = (props) => {
   const updateFormSubmit = e => {
     console.log("Update user form");
   };
+  const refreshData = () =>{
+    props.fetchUserStart();
+  }
   const ListView = () => {
     return (
       <>
@@ -61,7 +64,7 @@ const UsersRedux = (props) => {
           variant="primary"
           size="sm"
           onClick={() => {
-            fetchApi();
+            refreshData();
           }}
         >
           Refresh
