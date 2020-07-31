@@ -213,7 +213,7 @@ const UsersRedux = (props) => {
         </div>
       )}
 
-      <h4>Users Management</h4>
+      <h4>Users Redux Management</h4>
       {pageView()}
     </>
   );
